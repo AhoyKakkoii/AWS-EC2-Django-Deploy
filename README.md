@@ -13,6 +13,6 @@ Steps:
   * select running instance and select connect->ssh client, cp ssh command go to ssh key directory and paste run command
 2. Before deployment
   * Disable debug mode and allow hosts in Django app settings.py
-  * check deploy requirements '<python manage.py check --deploy>'
+  * check deploy requirements `<python manage.py check --deploy>`
   
   

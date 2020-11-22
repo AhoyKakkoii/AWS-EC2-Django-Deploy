@@ -1,3 +1,5 @@
+IN PROCESS
+------------------------------------------------------------
 # AWS EC2 Django Deployment
 
 Notes:

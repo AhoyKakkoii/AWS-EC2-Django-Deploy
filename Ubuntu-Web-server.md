@@ -1,4 +1,4 @@
-## How To Host Django React App in Local
+## How To Host Django React App from Local
 
 Note:
  - OS: Ubuntu 20.0.4, running in my raspberry pi

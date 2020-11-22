@@ -47,7 +47,7 @@ Steps:
   ```
   * make supervisor read the config: `sudo mkdir /var/log/gunicorn && sudo supervisorctl reread`
   * tell supervisor to start gunicorn: `sudo supervisorctl update`
-  * configurate nginx: `sudo nano /etc/nginx/sites-availables/django.conf`
+  * configurate nginx: `sudo nano /etc/nginx/sites-available/django.conf`
   * add following:
   ```
   server{

@@ -108,12 +108,12 @@ deactivate
 <VirtualHost *:80>
     . . .
 
-    Alias /static /home/ubuntu/django-react-app/myproject/static
-    <Directory /home/ubuntu/django-react-app/myproject/static>
+    Alias /static /home/ubuntu/django-react-app/static
+    <Directory /home/ubuntu/django-react-app/static>
         Require all granted
     </Directory>
 
-    <Directory /home/ubuntu/django-react-app/myproject/myproject>
+    <Directory /home/ubuntu/django-react-app/myproject>
         <Files wsgi.py>
             Require all granted
         </Files>
@@ -121,7 +121,7 @@ deactivate
 
     WSGIDaemonProcess myproject python-home=/home/ubuntu/django-react-app/env python-path=/home/ubuntu/django-react-app
     WSGIProcessGroup myproject
-    WSGIScriptAlias / /home/ubuntu/django-react-app/myproject/myproject/wsgi.py
+    WSGIScriptAlias / /home/ubuntu/django-react-app/myproject/wsgi.py
 
 </VirtualHost>
 ```

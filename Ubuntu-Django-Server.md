@@ -128,9 +128,9 @@ deactivate
 
 13.  give permissions and restart apache2
 ```
-chmod 664 ~/django-react-app/myproject/db.sqlite3
-sudo chown :www-data ~/django-react-app/myproject/db.sqlite3
-sudo chown :www-data ~/django-react-app/myproject
+chmod 664 ~/django-react-app/db.sqlite3
+sudo chown :www-data ~/django-react-app/db.sqlite3
+sudo chown :www-data ~/django-react-app
 sudo ufw delete allow 8000
 sudo ufw allow 'Apache Full'
 sudo systemctl restart apache2

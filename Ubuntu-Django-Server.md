@@ -20,7 +20,7 @@ source env/bin/activate
 3. create django app:
 ```
 pip install django
-django-admin.py startproject myproject
+django-admin.py startproject myproject .
 ```
 4. configure settings, add/edit following to myproject/settings.py
 ```

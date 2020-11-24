@@ -43,16 +43,67 @@ create-react-app frontend
 cd frontend && npm run build
 cd .. && ./manage.py collectstatic
 ```
-7. test server locally, run following then open the ubuntu url (http://ip:8000) in browser
+7. configure frontend app, add following to myproject/views.py
+```
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.views.generic import View
+from django.views.decorators.csrf import csrf_exempt
+from django.conf import settings
+
+import logging
+import os
+
+class FrontendAppView(View):
+    """
+    Serves the compiled frontend entry point (only works if you have run `yarn
+    run build`).
+    """
+    def get(self, request):
+            print (os.path.join(settings.REACT_APP_DIR, 'build', 'index.html'))
+            try:
+                with open(os.path.join(settings.REACT_APP_DIR, 'build', 'index.html')) as f:
+                    return HttpResponse(f.read())
+            except FileNotFoundError:
+                logging.exception('Production build of app not found')
+                return HttpResponse(
+                    """
+                    This URL is only used when you have built the production
+                    version of the app. Visit http://localhost:3000/ instead, or
+                    run `yarn run build` to test the production version.
+                    """,
+                    status=501,
+                )
+```
+8. configure django-react, add/edit folloing to myproject/settings.py
+```
+REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
+STATICFILES_DIRS = [
+    os.path.join(REACT_APP_DIR, 'build', 'static'),
+]
+```
+
+9. confgure django-react, add/edit following to myproject/urls.py
+```
+from django.conf.urls import url
+from django.contrib import admin
+from django.urls import path
+from myproject.views import FrontendAppView
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    url(r'^', FrontendAppView.as_view())
+]
+```
+10. test server locally, run following then open the ubuntu url (http://ip:8000) in browser
 ```
 sudo ufw allow 8000
 ./manage.py runserver 0.0.0.0:8000
 ```
-8.  deactivate
+11.  deactivate
 ```
 deactivate
 ```
-9.configure apache2, add/edit following to /etc/apache2/sites-available/000-default.conf, change ubuntu to your username
+12.configure apache2, add/edit following to /etc/apache2/sites-available/000-default.conf, change ubuntu to your username
 ```
 <VirtualHost *:80>
     . . .
@@ -75,7 +126,7 @@ deactivate
 </VirtualHost>
 ```
 
-10.  give permissions and restart apache2
+13.  give permissions and restart apache2
 ```
 chmod 664 ~/django-react-app/myproject/db.sqlite3
 sudo chown :www-data ~/django-react-app/myproject/db.sqlite3

@@ -69,7 +69,7 @@ Options -MultiViews
 18. serve static files:
 ```
 [sudo] rm /var/www/html/index.html
-sudo cp -r ~/ldeproject/reactapache/apachereactapp/build/* /var/www/html/
+sudo cp -r ~/django-react-init-deploy/react_app/frontend/build/* /var/www/html/
 sudo systemctl restart apache2
 ```
 20. configure router's port forwarding, open port 80 for http

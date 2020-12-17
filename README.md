@@ -8,3 +8,7 @@ https://blog.learningdollars.com/2020/01/16/how-to-host-a-django-api-using-mod-w
 https://www.youtube.com/watch?v=u0oEIqQV_-E
 
 3. [Ubuntu Django Server](https://github.com/AhoyKakkoii/Django-Deploy-Doc/blob/main/Ubuntu-Django-Server.md)
+
+4. make subdomain, e.g. delit.shaw-yu.com in domain of shaw-yu.com:
+refer to [what is subdomain](https://www.domain.com/blog/2019/01/15/subdomain/)
+and [how to configure nginx for serving multiple sites](https://webdock.io/en/docs/how-guides/how-configure-nginx-to-serve-multiple-websites-single-vps)

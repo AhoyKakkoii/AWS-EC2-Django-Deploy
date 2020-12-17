@@ -1,6 +1,6 @@
 # Some Instructions to make server hosting for Django
 
-#### Note: this is the my notes for setting up my personal website, hosing on my raspberryPI, url : [http://www.shaw-yu.com]
+#### Note: this is the my notes for setting up my personal website, hosing on my raspberryPI, url : [http://www.shaw-yu.com](http://www.shaw-yu.com)
 
 1. Copy static files to apache, not work to serve Django
 [Ubuntu web server](https://github.com/AhoyKakkoii/AWS-EC2-Django-Deploy/blob/main/Ubuntu-Web-server.md)

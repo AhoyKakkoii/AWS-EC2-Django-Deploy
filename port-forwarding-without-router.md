@@ -6,6 +6,9 @@
 
 
 2. Fast Reverse Proxy (FRP)
+
 https://github.com/fatedier/frp
+
 use AWS EC2 free tier as proxy server
+
 assign domain to EC2 IP address
